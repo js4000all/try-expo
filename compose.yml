@@ -6,4 +6,7 @@ services:
     volumes:
       - ./:/usr/src/app # ローカルをコンテナ内にマウント
     command: sleep infinity
-    
+    environment:
+      - REACT_NATIVE_PACKAGER_HOSTNAME=$DOCKER_HOST_IP_ADDRESS
+    ports:
+      - "8081:8081" # Expo 開発サーバー
